@@ -1,0 +1,698 @@
+-- MySQL dump 10.16  Distrib 10.1.21-MariaDB, for Win32 (AMD64)
+--
+-- Host: localhost    Database: localhost
+-- ------------------------------------------------------
+-- Server version	10.1.21-MariaDB
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Current Database: `bdkonkagrow`
+--
+
+/*!40000 DROP DATABASE IF EXISTS `bdkonkagrow`*/;
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `bdkonkagrow` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `bdkonkagrow`;
+
+--
+-- Table structure for table `tb_caja`
+--
+
+DROP TABLE IF EXISTS `tb_caja`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_caja` (
+  `dv` int(10) NOT NULL AUTO_INCREMENT,
+  `fecha` date NOT NULL,
+  `usuario` varchar(35) NOT NULL,
+  `cajaini` int(8) NOT NULL,
+  `ventas` int(8) NOT NULL,
+  `ingresos` int(8) NOT NULL,
+  `egresos` int(8) NOT NULL,
+  `cajafin` int(8) NOT NULL,
+  `diferencia` int(8) NOT NULL,
+  PRIMARY KEY (`dv`)
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_caja`
+--
+
+LOCK TABLES `tb_caja` WRITE;
+/*!40000 ALTER TABLE `tb_caja` DISABLE KEYS */;
+INSERT INTO `tb_caja` VALUES (1,'2017-05-10','admin',15000,0,0,0,15000,0),(2,'2017-05-10','admin',2890,0,0,0,2500,-390),(3,'2017-05-10','admin',2890,0,0,0,2990,100),(4,'2017-05-10','admin',15000,0,15000,10000,20000,0),(5,'2017-05-10','admin',15000,0,15000,10000,20000,0),(6,'2017-05-10','admin',20000,0,15000,10000,25000,0),(7,'2017-05-10','admin',2000,0,15000,10000,7000,0),(8,'2017-05-10','admin',15000,0,20000,16000,19000,0),(9,'2017-05-10','admin',15000,0,20000,16000,19000,0),(10,'2017-05-10','admin',15000,0,20000,16000,19000,0),(11,'2017-05-10','admin',15000,0,20000,16000,19000,0),(12,'2017-05-10','admin',0,0,20000,16000,4000,0),(13,'2017-05-10','admin',1500,0,20000,16000,5500,0),(14,'2017-05-10','admin',2000,0,20000,16000,6000,0),(15,'2017-05-10','admin',1500,0,20000,16000,5500,0),(16,'2017-05-11','admin',15000,0,0,0,15000,0),(17,'2017-05-11','admin',15000,0,0,0,15000,0),(18,'2017-05-11','admin',15000,0,0,0,15000,0),(19,'2017-05-11','admin',1500,0,0,0,1500,0),(20,'2017-05-11','admin',0,0,0,0,0,0),(21,'2017-05-11','admin',0,0,0,0,0,0),(22,'2017-05-12','admin',0,0,0,0,0,0),(23,'2017-05-13','admin',15000,0,0,0,15000,0),(24,'2017-06-11','admin',10000,0,0,0,10,-9990);
+/*!40000 ALTER TABLE `tb_caja` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_cajaegreso`
+--
+
+DROP TABLE IF EXISTS `tb_cajaegreso`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_cajaegreso` (
+  `dv` int(10) NOT NULL AUTO_INCREMENT,
+  `fecha` date NOT NULL,
+  `usuario` varchar(35) NOT NULL,
+  `motivo` varchar(255) NOT NULL,
+  `monto` int(8) NOT NULL,
+  PRIMARY KEY (`dv`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_cajaegreso`
+--
+
+LOCK TABLES `tb_cajaegreso` WRITE;
+/*!40000 ALTER TABLE `tb_cajaegreso` DISABLE KEYS */;
+INSERT INTO `tb_cajaegreso` VALUES (1,'2017-05-10','admin','mascala',10000),(2,'2017-05-10','admin','ROBO',6000);
+/*!40000 ALTER TABLE `tb_cajaegreso` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_cajaingreso`
+--
+
+DROP TABLE IF EXISTS `tb_cajaingreso`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_cajaingreso` (
+  `dv` int(10) NOT NULL AUTO_INCREMENT,
+  `fecha` date NOT NULL,
+  `usuario` varchar(35) NOT NULL,
+  `motivo` varchar(255) NOT NULL,
+  `monto` int(8) NOT NULL,
+  PRIMARY KEY (`dv`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_cajaingreso`
+--
+
+LOCK TABLES `tb_cajaingreso` WRITE;
+/*!40000 ALTER TABLE `tb_cajaingreso` DISABLE KEYS */;
+INSERT INTO `tb_cajaingreso` VALUES (1,'2017-05-10','admin','llego platitaaaa',15000),(2,'2017-05-10','admin','HOLA',5000);
+/*!40000 ALTER TABLE `tb_cajaingreso` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_cliente`
+--
+
+DROP TABLE IF EXISTS `tb_cliente`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_cliente` (
+  `nomcliente` varchar(20) NOT NULL,
+  `rutcliente` varchar(10) NOT NULL,
+  `fonocliente` int(15) NOT NULL,
+  `emailcliente` varchar(40) NOT NULL,
+  `puntoscliente` int(11) NOT NULL,
+  PRIMARY KEY (`rutcliente`),
+  KEY `nomcliente` (`nomcliente`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_cliente`
+--
+
+LOCK TABLES `tb_cliente` WRITE;
+/*!40000 ALTER TABLE `tb_cliente` DISABLE KEYS */;
+INSERT INTO `tb_cliente` VALUES ('SIN CLIENTE','17614376-2',412252408,'ventasincliente@gmail.com',0),('Jenrru','33333333-3',44864664,'andres.wolf@gmail.com',100),('caca','88888888-8',80080080,'holactm@gmail.com',120);
+/*!40000 ALTER TABLE `tb_cliente` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_detalleentrada`
+--
+
+DROP TABLE IF EXISTS `tb_detalleentrada`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_detalleentrada` (
+  `codentrada` int(10) NOT NULL,
+  `codprod` varchar(10) NOT NULL,
+  `detalleprod` varchar(30) NOT NULL,
+  `cantidad` int(6) NOT NULL,
+  `precio_unitario` int(7) NOT NULL,
+  `precio_total` int(7) NOT NULL,
+  PRIMARY KEY (`codentrada`,`codprod`),
+  KEY `tb_detalleentrada_ibfk_2` (`codprod`),
+  CONSTRAINT `tb_detalleentrada_ibfk_1` FOREIGN KEY (`codentrada`) REFERENCES `tb_entrada` (`codentrada`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `tb_detalleentrada_ibfk_2` FOREIGN KEY (`codprod`) REFERENCES `tb_productos` (`codprod`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_detalleentrada`
+--
+
+LOCK TABLES `tb_detalleentrada` WRITE;
+/*!40000 ALTER TABLE `tb_detalleentrada` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tb_detalleentrada` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_detallesalida`
+--
+
+DROP TABLE IF EXISTS `tb_detallesalida`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_detallesalida` (
+  `codsalida` int(10) NOT NULL,
+  `codprod` varchar(20) NOT NULL,
+  `detalleprod` varchar(40) NOT NULL,
+  `cantidad` int(3) NOT NULL,
+  `precio_unitario` int(6) NOT NULL,
+  `precio_total` int(8) NOT NULL,
+  PRIMARY KEY (`codsalida`,`codprod`),
+  KEY `codsalida` (`codsalida`),
+  KEY `codsalida_2` (`codsalida`),
+  KEY `codprod` (`codprod`),
+  CONSTRAINT `tb_detallesalida_ibfk_1` FOREIGN KEY (`codsalida`) REFERENCES `tb_salidas` (`codsalida`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `tb_detallesalida_ibfk_2` FOREIGN KEY (`codprod`) REFERENCES `tb_productos` (`codprod`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_detallesalida`
+--
+
+LOCK TABLES `tb_detallesalida` WRITE;
+/*!40000 ALTER TABLE `tb_detallesalida` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tb_detallesalida` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_entrada`
+--
+
+DROP TABLE IF EXISTS `tb_entrada`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_entrada` (
+  `codentrada` int(30) NOT NULL,
+  `fecha` date NOT NULL,
+  `usuario` varchar(30) NOT NULL,
+  `motivo` varchar(30) NOT NULL,
+  `nulo` tinyint(1) NOT NULL,
+  PRIMARY KEY (`codentrada`),
+  KEY `motivo` (`motivo`),
+  KEY `usuario` (`usuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_entrada`
+--
+
+LOCK TABLES `tb_entrada` WRITE;
+/*!40000 ALTER TABLE `tb_entrada` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tb_entrada` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_marcas`
+--
+
+DROP TABLE IF EXISTS `tb_marcas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_marcas` (
+  `codmarca` int(6) NOT NULL AUTO_INCREMENT,
+  `nom_marca` varchar(20) NOT NULL,
+  PRIMARY KEY (`codmarca`),
+  KEY `nom_marca` (`nom_marca`)
+) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_marcas`
+--
+
+LOCK TABLES `tb_marcas` WRITE;
+/*!40000 ALTER TABLE `tb_marcas` DISABLE KEYS */;
+INSERT INTO `tb_marcas` VALUES (29,'4:20 Genetics'),(52,'aledinha'),(51,'amico'),(18,'Atami'),(61,'Atmos'),(24,'B.A.C.'),(36,'Barney´s Farm'),(21,'Biobizz'),(55,'Blunt Wrap'),(47,'Buddha Seeds'),(53,'c-thru'),(20,'Canna'),(32,'Cannabiogen'),(63,'Co2Boost'),(14,'Cultibox Light'),(44,'Delicious'),(26,'Dinafem'),(33,'Dutch Passion'),(37,'Elements'),(31,'EVA'),(15,'Garden High'),(57,'Green House'),(23,'Grotek'),(17,'Grow Genetics'),(58,'Growth Tecnology'),(19,'Hesi'),(65,'Integra Boost'),(54,'Kenex'),(45,'Maceta'),(41,'Medical Seeds'),(30,'Nirvana'),(42,'OCB'),(49,'Odorsok'),(60,'Ona'),(48,'OSRAM'),(40,'Paradise Seeds'),(25,'Powder Feeding'),(16,'Probox'),(27,'Pyramid'),(43,'Randy´s'),(38,'Raw'),(34,'Ripper Seeds'),(39,'Samsara'),(50,'Sensi Seeds'),(67,'Sin Marca'),(28,'Sweet Seeds'),(22,'Top Crop'),(66,'Ventiladores Varios'),(56,'Vents'),(46,'World of Seeds');
+/*!40000 ALTER TABLE `tb_marcas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_motientrada`
+--
+
+DROP TABLE IF EXISTS `tb_motientrada`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_motientrada` (
+  `codmotiv` int(7) NOT NULL AUTO_INCREMENT,
+  `motivo` varchar(30) NOT NULL,
+  PRIMARY KEY (`codmotiv`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_motientrada`
+--
+
+LOCK TABLES `tb_motientrada` WRITE;
+/*!40000 ALTER TABLE `tb_motientrada` DISABLE KEYS */;
+INSERT INTO `tb_motientrada` VALUES (1,'hola'),(2,'alo'),(3,'asdasd');
+/*!40000 ALTER TABLE `tb_motientrada` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_motivos`
+--
+
+DROP TABLE IF EXISTS `tb_motivos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_motivos` (
+  `codmotiv` int(6) NOT NULL AUTO_INCREMENT,
+  `motivo` varchar(20) NOT NULL,
+  PRIMARY KEY (`codmotiv`),
+  KEY `motivo` (`motivo`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_motivos`
+--
+
+LOCK TABLES `tb_motivos` WRITE;
+/*!40000 ALTER TABLE `tb_motivos` DISABLE KEYS */;
+INSERT INTO `tb_motivos` VALUES (2,''),(4,''),(8,''),(1,'aaaa'),(5,'aaaa'),(9,'aaaae'),(10,'asdasd'),(3,'eeee'),(6,'eeee'),(7,'weqweq');
+/*!40000 ALTER TABLE `tb_motivos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_pack`
+--
+
+DROP TABLE IF EXISTS `tb_pack`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_pack` (
+  `codpack` varchar(25) NOT NULL,
+  `nompack` varchar(30) NOT NULL,
+  `preciopack` int(10) NOT NULL,
+  `ahorro` int(6) NOT NULL,
+  PRIMARY KEY (`codpack`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_pack`
+--
+
+LOCK TABLES `tb_pack` WRITE;
+/*!40000 ALTER TABLE `tb_pack` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tb_pack` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_packprod`
+--
+
+DROP TABLE IF EXISTS `tb_packprod`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_packprod` (
+  `codprod` varchar(25) NOT NULL,
+  `codpack` varchar(25) NOT NULL,
+  `producto` varchar(40) NOT NULL,
+  `cantidad` int(3) NOT NULL,
+  `precio_unitario` int(6) NOT NULL,
+  `precio_total` int(6) NOT NULL,
+  PRIMARY KEY (`codprod`,`codpack`),
+  KEY `codpack` (`codpack`),
+  KEY `codprod` (`codprod`),
+  KEY `producto` (`producto`),
+  CONSTRAINT `tb_packprod_ibfk_3` FOREIGN KEY (`producto`) REFERENCES `tb_productos` (`detalleprod`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `tb_packprod_ibfk_4` FOREIGN KEY (`codpack`) REFERENCES `tb_pack` (`codpack`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `tb_packprod_ibfk_5` FOREIGN KEY (`codprod`) REFERENCES `tb_productos` (`codprod`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_packprod`
+--
+
+LOCK TABLES `tb_packprod` WRITE;
+/*!40000 ALTER TABLE `tb_packprod` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tb_packprod` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_pago`
+--
+
+DROP TABLE IF EXISTS `tb_pago`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_pago` (
+  `valor_hora` int(11) NOT NULL,
+  `valor_hora_extra` int(11) NOT NULL,
+  `rut_emp` int(11) NOT NULL,
+  `hora_trab` int(11) NOT NULL,
+  `horae_trab` int(11) NOT NULL,
+  `total` int(11) NOT NULL,
+  `fecha_pago` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_pago`
+--
+
+LOCK TABLES `tb_pago` WRITE;
+/*!40000 ALTER TABLE `tb_pago` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tb_pago` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_productos`
+--
+
+DROP TABLE IF EXISTS `tb_productos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_productos` (
+  `codprod` varchar(20) NOT NULL,
+  `detalleprod` varchar(100) NOT NULL,
+  `unidad` varchar(10) NOT NULL,
+  `rubro` varchar(20) NOT NULL,
+  `marca` varchar(15) NOT NULL,
+  `proveedor` varchar(30) DEFAULT NULL,
+  `precioprod` int(10) NOT NULL,
+  `stock` int(4) NOT NULL,
+  `stockmin` int(4) NOT NULL,
+  PRIMARY KEY (`codprod`),
+  KEY `detalleprod` (`detalleprod`),
+  KEY `proveedor` (`proveedor`),
+  KEY `rubro` (`rubro`),
+  KEY `unidad` (`unidad`),
+  KEY `marca` (`marca`),
+  CONSTRAINT `tb_productos_ibfk_3` FOREIGN KEY (`marca`) REFERENCES `tb_marcas` (`nom_marca`) ON UPDATE CASCADE,
+  CONSTRAINT `tb_productos_ibfk_4` FOREIGN KEY (`unidad`) REFERENCES `tb_unidades` (`nom_unidad`) ON UPDATE CASCADE,
+  CONSTRAINT `tb_productos_ibfk_5` FOREIGN KEY (`proveedor`) REFERENCES `tb_proveedor` (`nomproveedor`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_productos`
+--
+
+LOCK TABLES `tb_productos` WRITE;
+/*!40000 ALTER TABLE `tb_productos` DISABLE KEYS */;
+INSERT INTO `tb_productos` VALUES ('000000136','White Widow XXL x3','unidad','Semillas','Dinafem','KONKA GROW',25000,5,5),('000000167','Acapulco Gold x5','unidad','Semillas','Barney´s Farm','KONKA GROW',31000,5,5),('000000172','Original Amnesia Auto x1','unidad','Semillas','Dinafem','KONKA GROW',8400,5,5),('000000173','Original Amnesia auto x3','unidad','Semillas','Dinafem','KONKA GROW',24900,5,5),('000000175','Critical +2.0 Auto x1','unidad','Semillas','Dinafem','KONKA GROW',9100,5,5),('000000176','Critical +2.0 Auto x3','unidad','Semillas','Dinafem','KONKA GROW',25100,5,5),('000000177','White Widow Auto x1','unidad','Semillas','Dinafem','KONKA GROW',9000,5,5),('000000178','White Widow Auto','unidad','Semillas','Dinafem','KONKA GROW',26000,5,5),('000000179','Moby Dick XXL x3','unidad','Semillas','Dinafem','KONKA GROW',24900,5,5),('000000180','Moby Dick XXL x1','unidad','Semillas','Dinafem','KONKA GROW',8400,5,5),('000000181','Haze 2.0 Auto','unidad','Semillas','Dinafem','KONKA GROW',24900,5,5),('000000182','Haze 2.0 Auto x3','unidad','Semillas','Dinafem','KONKA GROW',23800,5,5),('000000183','Critical Jack Auto','unidad','Semillas','Dinafem','KONKA GROW',24000,5,5),('000000184','Critical Jack Auto x3','unidad','Semillas','Dinafem','KONKA GROW',24500,5,5),('000000186','White Widow XXl x1','unidad','Semillas','Dinafem','KONKA GROW',8400,5,5),('000000266','Master Cush','unidad','Semillas','Nirvana','KONKA GROW',18000,1,5),('000000268','AK 48 feminizada','unidad','Semillas','Nirvana','KONKA GROW',20000,1,5),('000000270','Bubblelicius ','unidad','Semillas','Nirvana','KONKA GROW',20000,2,5),('000000271','Hawai Maui Waui','unidad','Semillas','Nirvana','KONKA GROW',20000,1,5),('000000272','Blue Mystic Automatic','unidad','Semillas','Nirvana','KONKA GROW',18000,2,5),('000000275','Bubblelicious Automatic','unidad','Semillas','Nirvana','KONKA GROW',18000,3,5),('000000309','Jock Horror','unidad','Semillas','Nirvana','KONKA GROW',20000,1,5),('000000310','Sativas Sour Diesel','unidad','Semillas','Nirvana','KONKA GROW',20000,2,5),('000000328','Gipsy Haze','unidad','Semillas','EVA','KONKA GROW',21000,5,5),('000000329','Excalibur','unidad','Semillas','EVA','KONKA GROW',21000,5,5),('000000330','Missing in Barcelona','unidad','Semillas','EVA','KONKA GROW',23000,5,5),('000000331','Veneno','unidad','Semillas','EVA','KONKA GROW',23000,5,5),('000000332','Papa´s Candy','unidad','Semillas','EVA','KONKA GROW',22000,5,5),('000000333','Furious Candy','unidad','Semillas','EVA','KONKA GROW',19000,5,5),('000000334','Monster','unidad','Semillas','EVA','KONKA GROW',18000,5,5),('000000335','Black Dream','unidad','Semillas','EVA','KONKA GROW',18000,5,5),('000000410','TNT Kush','unidad','Semillas','EVA','KONKA GROW',21000,5,5),('000000414','Chanell + ','unidad','Semillas','Medical Seeds','KONKA GROW',22000,5,5),('000000415','White Widow','unidad','Semillas','Medical Seeds','KONKA GROW',24000,5,5),('000000416','2046','unidad','Semillas','Medical Seeds','KONKA GROW',24000,5,5),('000000417','Y Griega','unidad','Semillas','Medical Seeds','KONKA GROW',21000,5,5),('000000418','Jack la Mota','unidad','Semillas','Medical Seeds','KONKA GROW',80000,5,5),('000000419','Sour Diesel','unidad','Semillas','Medical Seeds','KONKA GROW',22000,5,5),('000000420','Pineapple Express Auto x1','unidad','Semillas','Barney´s Farm','KONKA GROW',7500,5,5),('000000421','Pineapple Express Auto x3','unidad','Semillas','Barney´s Farm','KONKA GROW',21000,5,5),('000000422','NYC Diesel Auto','unidad','Semillas','Barney´s Farm','KONKA GROW',7500,5,5),('000000423','Cookies Kush','unidad','Semillas','Barney´s Farm','KONKA GROW',22000,5,5),('000000424','Cookies Kush x5','unidad','Semillas','Barney´s Farm','KONKA GROW',31000,5,5),('000000425','Ayahuasca Purple x3','unidad','Semillas','Barney´s Farm','KONKA GROW',22000,5,5),('000000426','Liberty Haze','unidad','Semillas','Barney´s Farm','KONKA GROW',22000,5,5),('000000427','LSD','unidad','Semillas','Barney´s Farm','KONKA GROW',23000,5,5),('000000428','G13 Haze','unidad','Semillas','Barney´s Farm','KONKA GROW',23000,5,5),('000000429','Acapulco Gold','unidad','Semillas','Barney´s Farm','KONKA GROW',23000,5,5),('000000430','Pink Plant','unidad','Semillas','EVA','KONKA GROW',21000,5,5),('000000431','Jamaican Dream','unidad','Semillas','EVA','KONKA GROW',21000,5,5),('000000432','High Level','unidad','Semillas','EVA','KONKA GROW',18000,5,5),('000000433','Sour Ripper','unidad','Semillas','Ripper Seeds','KONKA GROW',18000,5,5),('000000434','Toxic','unidad','Semillas','Ripper Seeds','KONKA GROW',18000,5,5),('000000435','Washing Machine','unidad','Semillas','Ripper Seeds','KONKA GROW',18000,5,5),('000000436','Criminal +','unidad','Semillas','Ripper Seeds','KONKA GROW',18000,5,5),('000000437','Grapegum','unidad','Semillas','Ripper Seeds','KONKA GROW',18000,5,5),('000000438','Double Glock','unidad','Semillas','Ripper Seeds','KONKA GROW',18000,5,5),('000000445','Ripper Haze','unidad','Semillas','Ripper Seeds','KONKA GROW',18000,5,5),('099123000','Bloombastic 100cc','Botella','Fertilizantes','Atami','KONKA GROW',19000,19,5),('099890100','Bloombastic 50cc','Botella','Fertilizantes','Atami','KONKA GROW',13500,1,5),('30052765','papelillo ocb negro 1 1/4 ','unidad','Tabaquería','OCB','KONKA GROW',450,91,10),('30068926','papelillo ocb  x-pert 1 1/4 griz','unidad','Tabaquería','OCB','KONKA GROW',450,60,10),('30087859','papelillo ocb organico 1 1/4','unidad','Tabaquería','OCB','KONKA GROW',450,95,10),('30104907','papelillo ocb no blanqueado 1 1/4','unidad','Tabaquería','OCB','KONKA GROW',450,96,10),('30119550','papelillo ocb ultimate 1 1/4','unidad','Tabaquería','OCB','KONKA GROW',450,94,10),('4008321387585','Ampolleta Sodio 150','unidad','Iluminación','OSRAM','KONKA GROW',5000,13,4),('4823016212399','Extractor lineal  de 150','unidad','Ventilación','Vents','KONKA GROW',19000,96,10),('4823016238160','Extractor TT 100  dual','unidad','Ventilación','Vents','KONKA GROW',35000,100,10),('5060240030002','Gramera  Eternity Clasic','unidad','Parafernalia','Kenex','KONKA GROW',10000,99,10),('5060240030194','Gramera CD','unidad','Parafernalia','Kenex','KONKA GROW',14000,100,10),('624493411428','Ona Spray 250ml.','unidad','Parafernalia','Ona','KONKA GROW',12500,100,10),('644536227618','Blunt  wet cherry','unidad','Tabaquería','Blunt Wrap','KONKA GROW',1000,100,10),('644536384410','papelillo blunt 1 1/4 regular','unidad','Tabaquería','Blunt Wrap','KONKA GROW',850,100,9),('644536384618','papelillo Blun 1 1/4 umbliched','unidad','Tabaquería','Blunt Wrap','KONKA GROW',850,100,10),('644536384717','Papelillo Blunt 1 1/14 Premium','unidad','Tabaquería','Blunt Wrap','KONKA GROW',850,100,10),('644536840022','papel de celulosa','unidad','Tabaquería','c-thru','KONKA GROW',1500,100,10),('648658033294','Randy´s Gris','unidad','Tabaquería','Randy´s','KONKA GROW',1500,100,10),('648658200016','papelillo cafe','unidad','Tabaquería','Randy´s','KONKA GROW',1500,1000,10),('670829207593','Bud fuel pro 500ml','unidad','Fertilizantes','Grotek','KONKA GROW',13990,100,10),('670829207807','MonsterGrow Pro de 130gr','unidad','Fertilizantes','Grotek','KONKA GROW',13000,100,10),('670829208200','Carbo Max  de 100gr. Suplemento de potasio','unidad','Fertilizantes','Grotek','KONKA GROW',7000,100,10),('670829208392','Monster Blom  130gr.','unidad','Fertilizantes','Grotek','KONKA GROW',11000,100,10),('670829208514','Pro-Silicate de 1lt.( Proporciona silicio y potasa a los vegetales)','unidad','Fertilizantes','Grotek','KONKA GROW',11000,99,10),('670829208729','Solo-Tek Bloom','unidad','Fertilizantes','Grotek','KONKA GROW',11400,100,10),('670829208736','Solo - tek Grow','unidad','Fertilizantes','Grotek','KONKA GROW',12500,100,10),('670829806116','The Final Flush 1lt.  Lavado de raices','unidad','Fertilizantes','Grotek','KONKA GROW',12000,99,10),('670829815132','Cal- Max de 1lt. ( corrector de  deficiencias)','unidad','Fertilizantes','Grotek','KONKA GROW',12000,100,10),('6943205401001','ODORSOK 100','unidad','Ventilación','Odorsok','KONKA GROW',23500,100,1),('6943205401002','Odorsok 125','unidad','Ventilación','Odorsok','KONKA GROW',28000,99,1),('6943205401003','Odorsok 150','unidad','Ventilación','Odorsok','KONKA GROW',46000,100,1),('716165176107','Raw Connosieur','unidad','Tabaquería','Raw','KONKA GROW',1250,100,10),('716165177296','papelillo elements','unidad','Tabaquería','Elements','KONKA GROW',600,100,10),('716165177357','Raw Sabana','unidad','Tabaquería','Raw','KONKA GROW',1000,100,10),('716165178873','tips (boquillas de papel prepicado )','unidad','Tabaquería','Elements','KONKA GROW',600,100,10),('716165178897','Elements Artesano','unidad','Tabaquería','Elements','KONKA GROW',1250,100,10),('716165178910','Elements Artesano Sabana','unidad','Tabaquería','Elements','KONKA GROW',2500,100,10),('716165200246','Raw Gummed Tips','unidad','Tabaquería','Raw','KONKA GROW',800,100,10),('716165201038','Raw Artesano','unidad','Tabaquería','Raw','KONKA GROW',1500,100,10),('7898915411041','papel de celulosa brasileño','unidad','Tabaquería','aledinha','KONKA GROW',1500,100,100),('802359000430','Bobeda de Curado 67 gr.','saco','Cultivo','Integra Boost','KONKA GROW',3500,100,10),('8435405304545','Manta de Co2','unidad','Cultivo','Co2Boost','KONKA GROW',7500,100,10),('8436554710904','Cooltube 125S','unidad','Iluminación','Garden High','KONKA GROW',32000,100,10),('8436554711000','Cooltube 125M','unidad','Iluminación','Garden High','KONKA GROW',36000,100,10),('8436554760015','Malla Sgrog','unidad','Cultivo','Garden High','KONKA GROW',6000,100,10),('8436554760930','Lentes protectores sodio','unidad','Iluminación','Garden High','KONKA GROW',9000,99,10),('8436554761081','Reflector IndorMatrix','unidad','Iluminación','Garden High','KONKA GROW',50000,3,5),('8436554761166','extractor lineal 100','unidad','Ventilación','Garden High','KONKA GROW',13500,100,10),('8436554761173','Extractor lineal 125','unidad','Ventilación','Garden High','KONKA GROW',15500,100,10),('8436554761234',' Extractor TT dual125','unidad','Ventilación','Garden High','KONKA GROW',37500,99,10),('8437004593337','Chadaupi Plant Agua gelificada para tus plantas','unidad','Cultivo','Biobizz','KONKA GROW',4000,97,10),('8438479305814','Organic Bloom 500','Botella','Fertilizantes','B.A.C.','KONKA GROW',8200,100,10),('8438479308419','Organic Grow 500','Botella','Fertilizantes','B.A.C.','KONKA GROW',8500,100,10),('8438479308617','Organic Grow 250','Botella','Fertilizantes','B.A.C.','KONKA GROW',6200,100,10),('8438479308815','Organic Bloom 250','Botella','Fertilizantes','B.A.C.','KONKA GROW',6200,100,10),('8438479309010','Organic PK Booster','Botella','Fertilizantes','B.A.C.','KONKA GROW',10200,100,10),('8438479310818','Bloom Stimulator 30ml','Botella','Fertilizantes','B.A.C.','KONKA GROW',10100,100,10),('8438479311211','Final Solution 30ml','Botella','Fertilizantes','B.A.C.','KONKA GROW',13500,1,10),('8438479311617','Auto Stimulator','Botella','Fertilizantes','B.A.C.','KONKA GROW',20500,100,10),('8506710000146','Tabaqueria Papel amico','unidad','Tabaquería','amico','KONKA GROW',500,100,5),('8717202906062','Super Skunk','unidad','Semillas','Sensi Seeds','KONKA GROW',22000,100,10),('8717202906079','Skunk #1','unidad','Semillas','Sensi Seeds','KONKA GROW',22000,100,10),('8717202906178','Northern Lights','unidad','Semillas','Sensi Seeds','KONKA GROW',27000,100,10),('8717202907007','Bib Bud','unidad','Semillas','Sensi Seeds','KONKA GROW',35000,100,10),('8717202907021','Silver Haze #9','unidad','Semillas','Sensi Seeds','KONKA GROW',35000,100,10),('8717202907038','Jack Flash #5','unidad','Semillas','Sensi Seeds','KONKA GROW',39000,100,10),('8717202907380','Sensi Skunk','unidad','Semillas','Sensi Seeds','KONKA GROW',20000,100,10),('8717524950682','Boost Accelerator','Botella','Fertilizantes','Canna','KONKA GROW',30500,2,2),('8717524958541','PK 13/14','Botella','Fertilizantes','Canna','KONKA GROW',10500,2,5),('8717524958589','Rhizotonic','Botella','Fertilizantes','Canna','KONKA GROW',20000,4,5),('8717524958626','Cannazym','Botella','Fertilizantes','Canna','KONKA GROW',11500,13,5),('8717662944307','Terra Flores 500','Botella','Fertilizantes','Canna','KONKA GROW',11500,8,5),('8717662944314','Terra Vega 500','Botella','Fertilizantes','Canna','KONKA GROW',11500,12,5),('8717677610518','Dutch Dragon','unidad','Semillas','Paradise Seeds','KONKA GROW',22000,100,10),('8717677610532','Nebula','unidad','Semillas','Paradise Seeds','KONKA GROW',22000,100,10),('8717677610624','Delahaze','unidad','Semillas','Paradise Seeds','KONKA GROW',22000,100,10),('8717677610747','Pandora','unidad','Semillas','Paradise Seeds','KONKA GROW',18000,2,10),('8717677610884','Vertigo','unidad','Semillas','Paradise Seeds','KONKA GROW',18500,4,10),('8717677610914','Automaria II','unidad','Semillas','Paradise Seeds','KONKA GROW',18000,2,5),('8717677610990','Belladonna','unidad','Semillas','Paradise Seeds','KONKA GROW',24000,100,10),('8717677611140','Auto Wappa','unidad','Semillas','Paradise Seeds','KONKA GROW',18000,1,5),('8717677611157','Auto White Berry','unidad','Semillas','Paradise Seeds','KONKA GROW',18500,2,5),('8717677611300','Durga Mata II CBD','unidad','Semillas','Paradise Seeds','KONKA GROW',22000,100,10),('8717729825853','Himalaya Gold','unidad','Semillas','Green House','KONKA GROW',18000,100,8),('8717729825891','The Church','unidad','Semillas','Green House','KONKA GROW',15000,100,10),('8717729825921','Lemon Skunk','unidad','Semillas','Green House','KONKA GROW',17500,100,10),('8717729825976','The Doctor','unidad','Semillas','Green House','KONKA GROW',17000,100,10),('8717729827208','Pure Kush','unidad','Semillas','Green House','KONKA GROW',17000,100,10),('8717729827383','Power Feeding hibrida sachet','unidad','Fertilizantes','Green House','KONKA GROW',500,100,7),('8717729827406','Powder Feeding  long flowering sachet','unidad','Fertilizantes','Green House','KONKA GROW',500,100,11),('8717729827437','Fertilizante Power Feeding Sachet','unidad','Fertilizantes','Green House','KONKA GROW',500,100,10),('8717729827536','Norther Lights NL5 Haze Mist','unidad','Semillas','Green House','KONKA GROW',20000,100,10),('8717729827598','Arjan´s Ultra Haze#2','unidad','Semillas','Green House','KONKA GROW',22000,5,5),('8717729827611','Nevilles Haze','unidad','Semillas','Green House','KONKA GROW',24000,100,10),('8718403232127','Try pack Biobizz','Botella','Fertilizantes','Biobizz','KONKA GROW',15000,100,10),('8718403232134','Try Pack Outdoor','unidad','Fertilizantes','Biobizz','KONKA GROW',15000,100,10),('8718403232141','Try pack  Stimulant','unidad','Fertilizantes','Biobizz','KONKA GROW',27000,100,11),('8718405837627','Leaf. Coat Spray Foliar  Preventivo','unidad','Fertilizantes','Biobizz','KONKA GROW',12500,100,10),('8719244303878','Bloombastic  pk14-15','unidad','Fertilizantes','Atami','KONKA GROW',19000,18,5),('888400010641','Complete 3/1','unidad','Vaporizadores','Atmos','KONKA GROW',38000,100,8),('888400012560','the Klin  Vaporizador ','unidad','Vaporizadores','Atmos','KONKA GROW',50000,100,10),('888400014083','Jump Vaporizador','unidad','Vaporizadores','Atmos','KONKA GROW',65000,100,10),('DELTA NUEVE 150ml','Delta 9 150ml','Botella','Fertilizantes','Cannabiogen','KONKA GROW',9000,20,5),('DELTA NUEVE 500CC','DELTA NUEVE 500CC','unidad','Fertilizantes','Cannabiogen','KONKA GROW',19000,10,5),('delta10','Delta 10 500cc','Botella','Fertilizantes','Cannabiogen','KONKA GROW',15000,12,5),('delta8','Delta 8 500cc','Botella','Fertilizantes','Cannabiogen','KONKA GROW',15000,12,5),('TCSC50L','Sustrato Top Crop Complete Mix 50Lt','saco','Sustrato','Top Crop','KONKA GROW',12000,101,10);
+/*!40000 ALTER TABLE `tb_productos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_proveedor`
+--
+
+DROP TABLE IF EXISTS `tb_proveedor`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_proveedor` (
+  `nomproveedor` varchar(20) NOT NULL,
+  `rutempresa` varchar(10) NOT NULL,
+  `fonoproveedor` int(15) NOT NULL,
+  `direccion` varchar(20) NOT NULL,
+  PRIMARY KEY (`rutempresa`),
+  KEY `nomproveedor` (`nomproveedor`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_proveedor`
+--
+
+LOCK TABLES `tb_proveedor` WRITE;
+/*!40000 ALTER TABLE `tb_proveedor` DISABLE KEYS */;
+INSERT INTO `tb_proveedor` VALUES ('KONKA GROW','66666666-6',976696957,'Barros Arana 54');
+/*!40000 ALTER TABLE `tb_proveedor` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_rubros`
+--
+
+DROP TABLE IF EXISTS `tb_rubros`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_rubros` (
+  `codrubro` int(6) NOT NULL AUTO_INCREMENT,
+  `nom_rubro` varchar(20) NOT NULL,
+  PRIMARY KEY (`codrubro`),
+  KEY `nom_rubro` (`nom_rubro`)
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_rubros`
+--
+
+LOCK TABLES `tb_rubros` WRITE;
+/*!40000 ALTER TABLE `tb_rubros` DISABLE KEYS */;
+INSERT INTO `tb_rubros` VALUES (31,'Armarios'),(34,'Cultivo'),(26,'Fertilizantes'),(25,'Iluminación'),(30,'Medición y Control'),(32,'Parafernalia'),(28,'Semillas'),(27,'Sustrato'),(33,'Tabaquería'),(35,'Vaporizadores'),(29,'Ventilación');
+/*!40000 ALTER TABLE `tb_rubros` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_salidas`
+--
+
+DROP TABLE IF EXISTS `tb_salidas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_salidas` (
+  `codsalida` int(10) NOT NULL AUTO_INCREMENT,
+  `fecha` date NOT NULL,
+  `usuario` varchar(20) NOT NULL,
+  `motivo` varchar(20) NOT NULL,
+  `nulo` tinyint(1) NOT NULL,
+  PRIMARY KEY (`codsalida`),
+  KEY `motivo` (`motivo`),
+  KEY `usuario` (`usuario`),
+  CONSTRAINT `tb_salidas_ibfk_1` FOREIGN KEY (`motivo`) REFERENCES `tb_motivos` (`motivo`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_salidas`
+--
+
+LOCK TABLES `tb_salidas` WRITE;
+/*!40000 ALTER TABLE `tb_salidas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tb_salidas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_semilla`
+--
+
+DROP TABLE IF EXISTS `tb_semilla`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_semilla` (
+  `codprod` varchar(30) NOT NULL,
+  `indica` int(3) NOT NULL,
+  `sativa` int(3) NOT NULL,
+  `rudelaris` int(3) NOT NULL,
+  KEY `codprod` (`codprod`),
+  CONSTRAINT `tb_semilla_ibfk_1` FOREIGN KEY (`codprod`) REFERENCES `tb_productos` (`codprod`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_semilla`
+--
+
+LOCK TABLES `tb_semilla` WRITE;
+/*!40000 ALTER TABLE `tb_semilla` DISABLE KEYS */;
+INSERT INTO `tb_semilla` VALUES ('8717202906079',60,40,0),('8717729825976',70,30,0),('8717729825921',50,50,0),('8717729827208',70,30,0),('8717729827536',30,70,0),('8717729827611',10,90,0),('8717729825891',60,40,0),('8717729825853',70,30,0),('8717677610624',70,30,0),('8717677611157',70,30,0),('8717677610518',75,25,0),('8717677610747',90,10,0),('8717677610914',50,50,0),('8717677610990',40,60,0),('8717677610532',40,60,0),('8717677610884',50,50,0),('8717202906062',60,40,0),('8717202907380',80,20,0),('8717202906178',90,10,0),('8717202907021',20,80,0),('8717202907038',35,65,0),('8717202907007',85,15,0),('8717677611300',90,10,0),('8717677611140',50,50,0),('000000266',80,20,0),('000000268',60,40,0),('000000270',60,40,0),('000000272',80,20,0),('000000271',20,80,0),('000000275',60,40,0),('000000310',30,70,0),('000000309',25,75,0),('000000445',20,80,0),('000000438',100,0,0),('000000437',40,60,0),('000000436',80,20,0),('000000434',40,60,0),('000000435',80,20,0),('000000433',40,60,0),('000000432',0,100,0),('000000431',10,90,0),('000000430',85,15,0),('000000328',20,80,0),('000000334',20,80,0),('000000329',20,80,0),('000000330',50,50,0),('000000335',50,50,0),('000000333',70,30,0),('000000331',85,15,0),('000000332',90,10,0),('000000410',100,0,0),('8717729827598',30,70,0),('000000414',50,50,0),('000000415',60,40,0),('000000416',0,100,0),('000000417',20,80,0),('000000418',25,75,0),('000000419',30,70,0),('000000420',70,30,0),('000000421',70,30,0),('000000422',40,60,0),('000000423',70,30,0),('000000424',70,30,0),('000000425',100,0,0),('000000426',40,60,0),('000000427',70,30,0),('000000428',20,80,0),('000000429',30,70,0),('000000167',30,70,0),('000000180',20,80,0),('000000179',20,80,0),('000000177',50,50,0),('000000178',50,50,0),('000000175',100,0,0),('000000176',100,0,0),('000000172',0,100,0),('000000173',0,100,0),('000000181',100,0,0),('000000182',0,100,0),('000000183',40,60,0),('000000184',40,60,0),('000000186',50,50,0),('000000136',50,50,0);
+/*!40000 ALTER TABLE `tb_semilla` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_unidades`
+--
+
+DROP TABLE IF EXISTS `tb_unidades`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_unidades` (
+  `codunidad` int(6) NOT NULL AUTO_INCREMENT,
+  `nom_unidad` varchar(15) NOT NULL,
+  PRIMARY KEY (`codunidad`),
+  KEY `nom_unidad` (`nom_unidad`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_unidades`
+--
+
+LOCK TABLES `tb_unidades` WRITE;
+/*!40000 ALTER TABLE `tb_unidades` DISABLE KEYS */;
+INSERT INTO `tb_unidades` VALUES (10,'Botella'),(9,'saco'),(8,'unidad');
+/*!40000 ALTER TABLE `tb_unidades` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_usuario`
+--
+
+DROP TABLE IF EXISTS `tb_usuario`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_usuario` (
+  `rutusuario` varchar(10) NOT NULL,
+  `nomusuario` varchar(20) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  `fonousuario` int(15) NOT NULL,
+  `emailusuario` varchar(40) NOT NULL,
+  `cargo` varchar(15) NOT NULL,
+  `activo` tinyint(1) NOT NULL,
+  PRIMARY KEY (`rutusuario`),
+  KEY `nomusuario` (`nomusuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_usuario`
+--
+
+LOCK TABLES `tb_usuario` WRITE;
+/*!40000 ALTER TABLE `tb_usuario` DISABLE KEYS */;
+INSERT INTO `tb_usuario` VALUES ('18144924-1','Admin','admin123',50574261,'jojan@homail.com','Administrador',0),('33333333-3','Jenrru','c7wqzp5p',89990900,'andres.wolf@gmail.com','Administrador',0);
+/*!40000 ALTER TABLE `tb_usuario` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_venta`
+--
+
+DROP TABLE IF EXISTS `tb_venta`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_venta` (
+  `n_boleta` int(10) NOT NULL,
+  `fechaventa` date NOT NULL,
+  `cliente` varchar(20) DEFAULT NULL,
+  `usuario` varchar(20) NOT NULL,
+  `medio_pago` varchar(15) NOT NULL,
+  `subtotal` int(6) NOT NULL,
+  `descuento` int(6) NOT NULL,
+  `totalventa` int(6) NOT NULL,
+  `nulo` tinyint(1) NOT NULL,
+  `puntos_venta` int(11) NOT NULL,
+  PRIMARY KEY (`n_boleta`),
+  KEY `cliente` (`cliente`),
+  KEY `usuario` (`usuario`),
+  CONSTRAINT `tb_venta_ibfk_1` FOREIGN KEY (`cliente`) REFERENCES `tb_cliente` (`nomcliente`) ON UPDATE CASCADE,
+  CONSTRAINT `tb_venta_ibfk_2` FOREIGN KEY (`usuario`) REFERENCES `tb_usuario` (`nomusuario`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_venta`
+--
+
+LOCK TABLES `tb_venta` WRITE;
+/*!40000 ALTER TABLE `tb_venta` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tb_venta` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_ventapack`
+--
+
+DROP TABLE IF EXISTS `tb_ventapack`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_ventapack` (
+  `n_bol` int(10) NOT NULL,
+  `codpack` varchar(20) NOT NULL,
+  `nombrepack` varchar(100) NOT NULL,
+  `cantidad` int(3) NOT NULL,
+  `precio_unitario` int(6) NOT NULL,
+  `precio_total` int(7) NOT NULL,
+  PRIMARY KEY (`n_bol`,`codpack`),
+  KEY `codpack` (`codpack`),
+  KEY `n_bol` (`n_bol`),
+  CONSTRAINT `tb_ventapack_ibfk_2` FOREIGN KEY (`n_bol`) REFERENCES `tb_venta` (`n_boleta`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `tb_ventapack_ibfk_3` FOREIGN KEY (`codpack`) REFERENCES `tb_pack` (`codpack`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_ventapack`
+--
+
+LOCK TABLES `tb_ventapack` WRITE;
+/*!40000 ALTER TABLE `tb_ventapack` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tb_ventapack` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_ventaprod`
+--
+
+DROP TABLE IF EXISTS `tb_ventaprod`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tb_ventaprod` (
+  `n_bol` int(20) NOT NULL,
+  `codprod` varchar(20) NOT NULL,
+  `producto` varchar(150) NOT NULL,
+  `cantidad` int(3) NOT NULL,
+  `precio_unitario` int(6) NOT NULL,
+  `precio_total` int(6) NOT NULL,
+  PRIMARY KEY (`n_bol`,`codprod`),
+  KEY `n_bol` (`n_bol`),
+  KEY `codprod` (`codprod`),
+  CONSTRAINT `tb_ventaprod_ibfk_1` FOREIGN KEY (`n_bol`) REFERENCES `tb_venta` (`n_boleta`) ON DELETE CASCADE,
+  CONSTRAINT `tb_ventaprod_ibfk_2` FOREIGN KEY (`codprod`) REFERENCES `tb_productos` (`codprod`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_ventaprod`
+--
+
+LOCK TABLES `tb_ventaprod` WRITE;
+/*!40000 ALTER TABLE `tb_ventaprod` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tb_ventaprod` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2017-06-17 23:18:03
